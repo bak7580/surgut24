@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой Сайт</title>
+    <style>
+        /* Сброс базовых отступов */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden; /* Убирает прокрутку, если картинка большая */
+        }
+
+        /* Настройка фоновой картинки на весь экран */
+        .background {
+            background-image: url('pic.png'); /* Путь к вашей картинке */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        /* Небольшое затемнение фона, чтобы кнопка и текст хорошо читались. 
+           Если оно не нужно — просто удалите весь блок .background::before */
+        .background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4); /* 0.4 — уровень прозрачности */
+            z-index: 1;
+        }
+
+        /* Контейнер для элементов поверх фона */
+        .content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            width: 100%;
+            padding: 40px 0;
+        }
+
+        /* Пустой блок сверху для баланса flex-бокса */
+        .top-spacer {
+            flex: 1;
+        }
+
+        /* Центрирование кнопки */
+        .button-container {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Стили самой кнопки */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #ff0000; /* Красный цвет кнопки */
+            text-decoration: none;
+            border-radius: 50px; /* Скругление углов */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Эффект при наведении курсора на кнопку */
+        .btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.05); /* Кнопка слегка увеличивается */
+        }
+
+        /* Контейнер для нижнего текста */
+        .footer-text {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Прижимает текст строго к низу */
+        }
+
+        /* Стили текста */
+        .text {
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 1.5;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); /* Тень у текста, чтобы читался на любом фоне */
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background">
+        <div class="content">
+            
+            <div class="top-spacer"></div>
+
+            <div class="button-container">
+                <a href="https://www.youtube.com/watch?v=Yon8uM_TOos" target="_blank" class="btn">Смотреть видео</a>
+            </div>
+
+            <div class="footer-text">
+                <p class="text">
+                    Здесь находится ваш текст. Вы можете легко изменить его, отредактировав этот блок в HTML-файле. Например, добавьте сюда описание, копирайт или любую другую информацию.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
